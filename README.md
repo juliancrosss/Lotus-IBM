@@ -369,6 +369,197 @@ Guardamos el navegador pulsando sobre el SmartIcon .
 
 
 
+*Frameset para el Cliente Notes
+El Frameset estará compuesto por 2 marcos:
+El Izquierdo contendrá el nuevo navegador que hemos creado y en el derecho se visualizará la vista que seleccionemos desde los enlaces de texto del navegador
+Para crear un Frameset nuevo, nos situamos en la vista de elementos de diseño, Frameset, y pulsamos sobre el botón, .
+La pantalla que nos aparece es la siguiente:
+En esta pantalla podemos seleccionar el número y el orden de los marcos que tendrá el Frameset, aunque lo que se elija aquí no será definitivo, ya que, dentro del Frameset también podremos configurar estas opciones.
+Para nuestra aplicación seleccionaremos la primera opción en Arrangement y el Number of frames será 2.
+Al pulsar en el Botón OK, nos aparecerá la siguiente pantalla:En Name pondremos: 1.0.-Principal
+En Alias: Principal
+En Title:”Gestor de Noticias”, este es el título que mostrará en la ventana al abrir el FrameSet en Lotus Notes.
+Ya hemos configurado las propiedades del FrameSet, ahora vamos a configurar las propiedades de cada uno de los marcos.
+Nos situamos en uno de los marcos y pulsamos sobre el con el botón derecho del ratón.
+
+*(Seleccionando las propiedades de un marco)
+Las propiedades del marco Izquierdo son, (Ver Figura 5.17.3)
+Name: Izquierdo
+Type: Name Element-Navigator
+Value: 1.0.-Principal, lo seleccionamos pulsando sobre la imagen, .
+Default target for links in frame: Derecho, queremos que el contenido de los enlaces de texto de nuestro navegador nos los muestre en el marco derecho.
+
+
+*(Propiedades del marco Derecho)
+Las propiedades del marco Derecho son,
+Name: Izquierdo
+Type: Name Element-View
+Value: 1.0.-Noticias por Autor, seleccionamos esta vista pulsando en la imagen, .
+*(Cambiar a las propiedades de la base de datos)
+
+*Cambiar la opción Al abrir la base de datos para el cliente Notes
+Ya hemos creado el FrameSet, ahora vamos a configurar la base de datos para que al abrirla nos lo muestre.
+Nos situamos en cualquier parte del conjunto de marcos que tenemos abierto y pulsamos sobre el SmartIcon , nos muestra las propiedades del FrameSet, elegimos que nos muestre las propiedades de la Database, en el desplegable que muestra el triangulo blanco
+
+
+
+
+*(Cambiando las Propiedades de la base de datos)
+En las propiedades de la base de datos, en la quinta pestaña, cambiamos las siguientes opciones, (Ver Figura 5.19.1).
+When Opened in the Notes Client, seleccionamos, Open designated FrameSet
+Name: Seleccionamos nuestro Frameset: 1.0.-Principal
+Abrimos la base de datos en Lotus Notes para probar como nos muestra el FrameSet seleccionado.
+Nos debe aparecer el conjunto de marcos:
+
+
+
+*Esquemas
+Vamos a preparar nuestra aplicación para que se pueda ver en cualquier navegador Web, para ello crearemos algunos elementos de diseño entre los que se encuentran los OutLines.
+Para crear un OutLine, nos situamos en la lista de elementos de diseño y seleccionamos Asare Code / Out linees y pulsamos en el botón,.
+Los Out linees están compuestos por entradas, las cuales actúan como los enlaces de texto de los navegadores
+
+*Podemos incluir las entradas del OutLine una a una o pulsar en este botón, para generar un Outline con todas las vistas que tenemos en la base de datos. El resultado lo podemos ver en la siguiente Figura:
+
+
+
+Eliminamos las entradas que no nos interese Mostar, situándonos encima y pulsando la tecla Supr. y nos quedamos únicamente con las de las vistas de por autor, por fecha, por categoría y lista de distribución.
+
+*(Cambiando las Propiedades de una entrada de Outline)
+El título de cada una de las entradas por defecto es el nombre de la vista, vamos a cambiarle el título para mejorar el aspecto, hacemos doble click sobre cada una de ellas y nos aparecerán sus propiedades.
+
+En todas cambiaremos en el cuadro de texto Label el nombre, poniéndole uno identificativo, por ejemplo, en la primera entrada le pondremos, Por Autor.
+
+En Content/ Type, elegimos Named ElementView, y pulsando sobre el icono, , seleccionamos la vista que queremos abrir.
+Y así con todas las entradas de este nuevo OutLine.
+
+
+Una vez que tengamos personalizadas todas las entradas del OutLine, vamos a configurar el propio OutLine, para ver las propiedades del mismo, nos situamos en cualquier parte del OutLine y pulsamos en el SmartIcon , que nos mostrará la siguiente pantalla:
+En Name le ponemos: 1.0.-Principal.
+En Alias: Principal.
+Guardamos el Outline pulsando sobre el SmartIcon .
+
+
+*Páginas
+
+Un OutLine no se puede incluir en un conjunto de marcos por si sólo, para poder visualizarlos es necesario incluirlo en una página o en un formulario, nosotros lo incluiremos en una página.
+Para crear una nueva página, nos situamos en la lista de elementos de diseño, seleccionamos Pages y pulsamos en el botón, .
+Pulsamos en el SmartIcon , para ver sus propiedades 
+
+
+*(Accediendo a las Propiedades de una Página)
+En Name ponemos: 1.0.-Principal | Principal
+Separando el nombre y el alias por el carácter “|”.
+Si nuestra página tuvieses código HTML seleccionaríamos Web access/ Content type / HTML, esta página va a contener un OutLine con lo cuál no es necesario seleccionar esta propiedad.
+
+Nos situamos en cualquier parte de la página donde queramos situar el OutLine y pulsamos sobre el Menú Create / Embedded Element / Outline, 
+
+Nos aparece la siguiente pantalla, en ella elegimos el Outline que hemos creado y pulsamos en el botón OK:
+Nos situamos encima del Outline que hemos insertado y pulsamos sobre el SmartIcon , , para ver sus propiedades, (Embedded Outlet)
+
+(Propiedades del OutLine insertado)
+Ajustamos en OutLine size, Width (anchura) y Height (altura).
+En Web Access seleccionamos Using HTML, otra opción es elegir Using Java applet, podéis probarlo con esta opción, pero la página tardará mucho más en cargarse.
+En el resto de pestañas se puede configurar el tipo de letra, ponerle una imagen de fondo a cada entrada, establecer los márgenes, el estilo de los bordes y establecer fórmulas de ocultación como en el resto de elementos de diseño, una cosa a tener en cuenta, es que existen diferentes niveles en el esquema, cada uno de los cuales se puede personalizar.
+Una vez se acabemos la personalización del Outline y de la página, guardamos la página pulsando sobre el SmartIcon .
+
+
+
+*Hojas de estilo
+Hojas de estilo
+Las hojas de estilo para las aplicaciones Web en Lotus se suelen crear en una página y así lo vamos a hacer, 
+Creamos una página nueva, que tenga el Nombre y el Alias: estilos.css | estilos.css.
+Vamos a copiar este código HTML y a pegarlo en nuestra nueva página:
+Una vez tengamos el código pegado en la página, lo seleccionamos todo, pulsando en el menú, Edit /Select All o en la combinación de teclas ctrl.+A y lo convertimos en código HTML pulsando en el menú, Text / Pass-Thru HTML.
+
+Por supuesto, este código HTML, es un ejemplo, se pueden crear todas las etiquetas nuevas que queramos.
+Guardamos la página pulsando sobre el SmartIcon .
+En los siguientes capítulos veremos como incluir esta página de estilos y sus etiquetas en los restantes elementos de diseño.
+
+
+*Agentes
+Necesitamos dos agentes, que se ejecutarán desde dos acciones de las vistas, con los cuales cambiaremos el valor del campo rdWeb del formulario noticias.
+Los nombres de estos agentes serán: Subir a Web y Dar de baja en Web
+Para crear un Agente nuevo, nos situamos en la vista de elementos de diseño, Shared / Agent, y pulsamos en el botón, .
+Nos aparecen automáticamente las propiedades del agente, vamos a configurarlo como en la siguiente pantalla:
+
+
+Abajo del panel de programación, nos aparece el botón,"Add Action" , lo pulsamos y accedemos a la programación del agente.
+Seleccionamos Modify Field como aparece en esta pantalla:
+
+
+En Modify by, seleccionamos Replacing, en The value in field, seleccionamos el campo rdWeb y como nuevo valor le ponemos “Si”, como aparece en la siguiente pantalla:
+Pulsamos el botón Replace y ya tenemos creado nuestro agente de Subir a Web.
+Creamos el agente Dar de baja en Web de la misma manera, pero en vez de poner el valor “Si” en el campo rdWeb, ponemos el valor “No”.
+
+
+*Los siguientes puntos nos indican la forma de acceder y ejecutar estos agentes.
+Cómo ejecutar los agentes:
+*Creamos dos acciones compartidas, con los nombres, Subir a Web y Dar de baja en Web.
+
+En Run, seleccionamos Simple action(s), pulsamos en el botón,"Edit action" , que aparece en la parte inferior de la pantalla y en las opciones que se muestran, elegimos Run Agent y el agente que corresponda ejecutar a cada acción,
+
+
+Guardamos las acciones compartidas pulsando sobre el SmartIcon
+
+Insertamos las acciones compartidas en las vistas de noticias que tenemos creadas.
+Abrimos la base de datos en Lotus notes y probamos que realmente, seleccionando varios documentos, se cambia el campo rdWeb en todos ellos a “Si” o “No”, dependiendo de la acción que hayamos seleccionado.
+
+
+*Formulario para visualizar las noticias en Web
+Creamos un nuevo formulario con un nombre diferente, por ejemplo:” 1.1.-FormularioNoticiasWeb”, pero con el mismo Alias que el formulario noticias: “FNoticias”.
+*Incluimos los mismos campos que en el formulario principal de noticias y le vamos a añadir algunas fórmulas para los navegadores como la validación de campos.
+$$Return: Creamos un campo de tipo texto y calculado al visualizar con la siguiente fórmula:"[/"+@WebDbName+"/todos/"+@Text(@DocumentUniqueID)+"?opendocument]", cuando guardemos un documento en Web, nos mostrará el mismo documento en modo lectura, lo normal es ocultar este campo en todos los navegadores.
+*Evento JS Header:
+En este evento del formulario, vamos a añadir un código JavaScript que nos compruebe que en el campo Título de la noticia se ha incluido algún valor antes de guardar el documento
+En el panel de fórmulas del JS Header le ponemos el siguiente código:
+function validar(){
+var f = document.forms[0] 
+if (f.Titulo.value == "") {
+alert ("Por favor, introduzca el título");
+f.Titulo.focus();
+return false;
+}
+;f.submit()}
+
+
+
+*(Ocultando una acción compartida para Web Browsers)
+*Cómo hacer una llamada a la función validar del evento JS Header:
+Vamos a llamar a la función Validar desde una acción Guardar nueva, pero antes tenemos que ocultar sólo para Web la que ya teníamos.
+Nos situamos en la lista de elementos de diseño, Shared Code / Actions
+Hacemos doble click sobre la acción Guardar y la ocultamos para Web 
+
+*(Navegando por las pestañas superiores)
+Volvemos al formulario de noticias para Web que estábamos personalizando, navegando a través de las pestañas superiores,
+
+
+Al haber ocultado la acción Guardar para Web browser, necesitamos una nueva para el formulario de noticias que se va a visualizar en Web.
+Creamos una acción nueva en el panel de acciones de este formulario que se va a llamar Guardar, le ponemos un icono identificativo y en el panel de fórmulas vamos a elegir Run JavaScript y como código: validar().
+
+
+
+De esta forma cuando creemos un nuevo documento noticia en Web y pulsemos en la acción Guardar, antes de guardar el documento comprobará que el campo se cumplen todas las condiciones que se indican el la función validar que hemos incluido en el evento JS Header.
+
+
+Objects / Evento HTML Body Attributes:
+Con el siguiente Código HTML: "bgcolor=#FFFFFF text=#000000 leftmargin=3 topmargin=3 marginwidth=3 marginheight=3", establecemos un color de fondo y de texto predeterminado para los documentos creados con este formulario.
+Los márgenes a los que queremos ajustar los documentos en la ventana del navegador, se definen en Internet Explorer con leftmargin y topmargin y con marginwidth y marginHeight en Netscape navigator
+Guardamos el formulario pulsando sobre el SmartIcon  y nos situamos en la vista de elementos de diseño Forms.
+
+Situándonos sobre el formulario 1.1.-Formulario NoticiasW y pulsando con el botón derecho del ratón podemos acceder a las propiedades de este elemento de diseño, pulsando en el menú que aparece Design Properties
+
+*La pantalla que nos aparece es como la siguiente:
+Lo ocultamos para Notes y Mobile clients.
+Hacemos los mismo con el formulario 1.0.-Formulario Noticia, pero este lo ocultamos para Web browsers y para Mobile clients
+Con estas ocultaciones conseguimos que cuando se abra un documento en el cliente Lotus notes utilice el formulario 1.0.-Formulario Noticia y que cuando se abra un documento en el cliente Web utilice el formulario 1.1.-Formulario NoticiaW.
+De esta forma podemos tener un diseño diferente, dependiendo del entorno en el que utilice la aplicación.
+
+
+* Formulario para visualizar las vistas
+* Creamos un nuevo formulario cuyo Nombre y Alias sea 3.0.- Formulario Vista | $$ViewTemplateDefault.
+* Este formulario será el formulario por defecto en el que se muestren todas las vistas en Web.
+
+
 
 
 * Authors	Los campos de lectores y autores permiten controlar quién puede leer y crear los documentos que se generan a partir de un formulario.
